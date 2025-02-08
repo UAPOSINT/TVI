@@ -12,7 +12,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeKatex from 'rehype-katex';
 import rehypeStringify from 'rehype-stringify';
 import rehypeRaw from 'rehype-raw';
-import remarkSlug from 'remark-slug';
+import rehypeSlug from 'rehype-slug';
 import remarkToc from 'remark-toc';
 
 export default function ArticlePage({ params }) {
@@ -53,7 +53,7 @@ export default function ArticlePage({ params }) {
         // Process markdown content
         const result = await unified()
           .use(remarkParse)
-          .use(remarkSlug)
+          .use(rehypeSlug)
           .use(remarkToc, {
             heading: 'Table of Contents',
             tight: true,
